@@ -1,8 +1,8 @@
-# HI_Todo
+# HI_Todo_Notes
 
 The site can be found at the following addresses 🌐:
 
-- Main: <https://hi-todo.netlify.com>
+- Main: <https://hi-todo-notes.netlify.app/>
 
 ## Pre-requisites
 
