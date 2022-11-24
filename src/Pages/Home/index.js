@@ -1,13 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "./style.css";
 
 const Home = () => {
-    const titleRef = useRef();
-    const descriptionRef = useRef();
-
     const handleAdd = () => {
         let title = document.getElementById("title").value;
         let description = document.getElementById("description").value;
@@ -34,8 +31,8 @@ const Home = () => {
             //     .then(res => res.json())
             //     .then(result => {
             //     })
-            titleRef.current.value = "";
-            descriptionRef.current.value = "";
+            document.getElementById("title").value = "";
+            document.getElementById("description").value = "";
         }
         else {
             alert("Please complete all the fields carefully!");
@@ -55,11 +52,11 @@ const Home = () => {
                                 <form className="row g-2" style={{ border: "1px solid #808080", padding: "30px" }}>
                                     <div className="col-12" style={{ backgroundColor: '#212529' }}>
                                         <label htmlFor="" className="form-label text-white">Title</label>
-                                        <input ref={titleRef} placeholder="title...." type="text" className="form-control" id="title" required />
+                                        <input placeholder="title...." type="text" className="form-control" id="title" required />
                                     </div>
                                     <div className="col-12" style={{ backgroundColor: '#212529' }}>
                                         <label htmlFor="" className="form-label text-white">Description </label>
-                                        <textarea ref={descriptionRef} placeholder="description......" type="text" className="form-control" id="description" required />
+                                        <textarea placeholder="description......" type="text" className="form-control" id="description" required />
                                     </div>
                                     <div className="col-12 d-flex p-0 m-0" style={{ backgroundColor: '#212529' }} >
                                         <div className="form-check" style={{ backgroundColor: '#212529' }}>
