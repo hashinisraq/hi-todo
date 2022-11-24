@@ -8,13 +8,16 @@ const Home = () => {
     const handleAdd = () => {
         let title = document.getElementById("title").value;
         let description = document.getElementById("description").value;
-        let catagory;
+        let catagory, catagoryE;
         if (document.getElementById('catagory1').checked === true) {
             catagory = document.getElementById('catagory1').value;
+            catagoryE = document.getElementById('catagory1');
         } else if (document.getElementById('catagory2').checked === true) {
             catagory = document.getElementById('catagory2').value;
+            catagoryE = document.getElementById('catagory2');
         } else if (document.getElementById('catagory3').checked === true) {
             catagory = document.getElementById('catagory3').value;
+            catagoryE = document.getElementById('catagory3');
         }
         else {
             catagory = "";
@@ -33,6 +36,7 @@ const Home = () => {
             //     })
             document.getElementById("title").value = "";
             document.getElementById("description").value = "";
+            catagoryE.checked = false;
         }
         else {
             alert("Please complete all the fields carefully!");
