@@ -4,7 +4,30 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "./style.css";
 
+const datas = [{
+    title: "test1",
+    discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi sed corporis tempora dolore. Nesciunt sunt accusamus ratione, aut, quibusdam alias quae voluptatum dicta id unde sed odit sequi enim?",
+    catagory: 'todo'
+},
+{
+    title: "test2",
+    discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi sed corporis tempora dolore. Nesciunt sunt accusamus ratione, aut, quibusdam alias quae voluptatum dicta id unde sed odit sequi enim? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, dignissimos?",
+    catagory: 'in-progess'
+},
+{
+    title: "test3",
+    discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi sed corporis tempora dolore. Nesciunt sunt accusamus ratione, aut, quibusdam alias quae voluptatum dicta id unde sed odit sequi enim? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, dignissimos?",
+    catagory: 'done'
+},
+{
+    title: "test4",
+    discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi sed corporis tempora dolore. Nesciunt sunt accusamus ratione, aut, quibusdam alias quae voluptatum dicta id unde sed odit sequi enim? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, dignissimos?",
+    catagory: 'in-progess'
+}
+]
+
 const Home = () => {
+    const data = datas.map(data => data);
     const handleAdd = () => {
         let title = document.getElementById("title").value;
         let description = document.getElementById("description").value;
@@ -83,7 +106,7 @@ const Home = () => {
                                         </div>
                                     </div>
                                     <div className="col-12" style={{ backgroundColor: '#212529' }}>
-                                        <input style={{ width: "50%", backgroundColor: "gray", padding: "10px", marginTop: "2px", borderRadius: "5px" }} type="submit" value="Add" onClick={e => {
+                                        <input style={{ width: "20%", backgroundColor: "gray", color: "black", padding: "10px", marginTop: "2px", borderRadius: "5px", fontWeight: "bold" }} type="submit" value="Add" onClick={e => {
                                             e.preventDefault();
                                             handleAdd();
                                         }} />
@@ -95,13 +118,50 @@ const Home = () => {
                 </Row>
                 <Row className="py-4">
                     <Col sm={12} md={6} lg={4}>
-                        todo
+                        <h3 style={{ color: "#808080", border: "1px solid #808080" }}>todo</h3>
+                        {
+                            data.map(data => data.catagory === "todo" ? <div
+                                key={data.title}
+                            >
+                                <Container className="pt-5">
+                                    <h4 className="pb-2">{data.title}</h4>
+                                    <h5>{data.discription}</h5>
+                                    <div>
+                                        <input type="button" value="in-progress" className="mx-4 bg-dark" />
+                                        <input type="button" value="done" className="mx-4 bg-dark" />
+                                    </div>
+                                </Container>
+                            </div> : <></>)
+                        }
                     </Col>
                     <Col sm={12} md={6} lg={4}>
-                        in-progess
+                        <h3 style={{ color: "#808080", border: "1px solid #808080" }}>in-progess</h3>
+                        {
+                            data.map(data => data.catagory === "in-progess" ? <div
+                                key={data.title}
+                            >
+                                <Container className="pt-5">
+                                    <h4 className="pb-2">{data.title}</h4>
+                                    <h5>{data.discription}</h5>
+                                    <div>
+                                        <input type="button" value="done" className="mx-4 bg-dark" />
+                                    </div>
+                                </Container>
+                            </div> : <></>)
+                        }
                     </Col>
                     <Col sm={12} md={6} lg={4}>
-                        done
+                        <h3 style={{ color: "#808080", border: "1px solid #808080" }}>done</h3>
+                        {
+                            data.map(data => data.catagory === "done" ? <div
+                                key={data.title}
+                            >
+                                <Container className="pt-5">
+                                    <h4 className="pb-2">{data.title}</h4>
+                                    <h5>{data.discription}</h5>
+                                </Container>
+                            </div> : <></>)
+                        }
                     </Col>
                 </Row>
             </Container>
