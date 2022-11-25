@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./style.css";
 
 const datas = [{
@@ -72,47 +72,45 @@ const Home = () => {
                 <Row className="pt-4">
                     <Col sm={12} md={12} lg={12}><h3>Take Notes...</h3></Col>
                 </Row>
-                <Row className="pt-5">
+                <Row className="pt-1">
                     <Col sm={12} md={12} lg={12}>
-                        <div>
-                            <div style={{ padding: "80px", backgroundColor: '#212529' }}>
-                                <form className="row g-2" style={{ border: "1px solid #808080", padding: "30px" }}>
-                                    <div className="col-12" style={{ backgroundColor: '#212529' }}>
-                                        <label htmlFor="" className="form-label text-white">Title</label>
-                                        <input placeholder="title...." type="text" className="form-control" id="title" required />
+                        <div style={{ padding: "30px", backgroundColor: '#212529' }}>
+                            <form className="row g-2" style={{ border: "1px solid #808080", padding: "30px" }}>
+                                <div className="col-12" style={{ backgroundColor: '#212529' }}>
+                                    <label htmlFor="" className="form-label text-white">Title</label>
+                                    <input placeholder="title...." type="text" className="form-control" id="title" required />
+                                </div>
+                                <div className="col-12" style={{ backgroundColor: '#212529' }}>
+                                    <label htmlFor="" className="form-label text-white">Description </label>
+                                    <textarea placeholder="description......" type="text" className="form-control" id="description" required />
+                                </div>
+                                <div className="col-12 p-0 m-0" style={{ backgroundColor: '#212529', width: "auto" }} >
+                                    <div className="form-check" style={{ backgroundColor: '#212529' }}>
+                                        <input className="form-check-input" type="radio" name="catagory" id="catagory1" value="todo" />
+                                        <label className="form-check-label text-white" htmlFor="flexRadioDefault1">
+                                            todo
+                                        </label>
                                     </div>
-                                    <div className="col-12" style={{ backgroundColor: '#212529' }}>
-                                        <label htmlFor="" className="form-label text-white">Description </label>
-                                        <textarea placeholder="description......" type="text" className="form-control" id="description" required />
+                                    <div className="form-check" style={{ backgroundColor: '#212529' }}>
+                                        <input className="form-check-input" type="radio" name="catagory" id="catagory2" value="in-progress" />
+                                        <label className="form-check-label text-white" htmlFor="flexRadioDefault2">
+                                            in-progress
+                                        </label>
                                     </div>
-                                    <div className="col-12 d-flex p-0 m-0" style={{ backgroundColor: '#212529' }} >
-                                        <div className="form-check" style={{ backgroundColor: '#212529' }}>
-                                            <input className="form-check-input" type="radio" name="catagory" id="catagory1" value="todo" />
-                                            <label className="form-check-label text-white" htmlFor="flexRadioDefault1">
-                                                todo
-                                            </label>
-                                        </div>
-                                        <div className="form-check" style={{ backgroundColor: '#212529' }}>
-                                            <input className="form-check-input" type="radio" name="catagory" id="catagory2" value="in-progress" />
-                                            <label className="form-check-label text-white" htmlFor="flexRadioDefault2">
-                                                in-progress
-                                            </label>
-                                        </div>
-                                        <div className="form-check" style={{ backgroundColor: '#212529' }}>
-                                            <input className="form-check-input" type="radio" name="catagory" id="catagory3" value="done" />
-                                            <label className="form-check-label text-white" htmlFor="flexRadioDefault3">
-                                                done
-                                            </label>
-                                        </div>
+                                    <div className="form-check" style={{ backgroundColor: '#212529' }}>
+                                        <input className="form-check-input" type="radio" name="catagory" id="catagory3" value="done" />
+                                        <label className="form-check-label text-white" htmlFor="flexRadioDefault3">
+                                            done
+                                        </label>
                                     </div>
-                                    <div className="col-12" style={{ backgroundColor: '#212529' }}>
-                                        <input style={{ width: "20%", backgroundColor: "gray", color: "black", padding: "10px", marginTop: "2px", borderRadius: "5px", fontWeight: "bold" }} type="submit" value="Add" onClick={e => {
-                                            e.preventDefault();
-                                            handleAdd();
-                                        }} />
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div className="col-12" style={{ backgroundColor: '#212529' }}>
+                                    <input style={{ width: "100%", backgroundColor: "gray", color: "black", padding: "10px", marginTop: "2px", borderRadius: "5px", fontWeight: "bold" }} type="submit" value="Add" onClick={e => {
+                                        e.preventDefault();
+                                        handleAdd();
+                                    }} />
+                                </div>
+                            </form>
                         </div>
                     </Col>
                 </Row>
@@ -127,7 +125,7 @@ const Home = () => {
                                     <h4 className="pb-2">{data.title}</h4>
                                     <h5>{data.discription}</h5>
                                     <div>
-                                        <input type="button" value="in-progress" className="mx-4 bg-dark" />
+                                        <input type="button" value="in-progress" className="mx-4 my-3 bg-dark" />
                                         <input type="button" value="done" className="mx-4 bg-dark" />
                                     </div>
                                 </Container>
