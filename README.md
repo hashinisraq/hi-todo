@@ -4,6 +4,8 @@ The site can be found at the following addresses 🌐:
 
 - Main: <https://hi-todo-notes.netlify.app/>
 
+- Server: <https://railway.app/>
+
 ## Pre-requisites
 
 - [React](https://reactjs.org/)

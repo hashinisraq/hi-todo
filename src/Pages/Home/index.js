@@ -2,32 +2,12 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import useDatas from "../../hooks/useDatas";
 import "./style.css";
 
-const datas = [{
-    title: "test1",
-    discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi sed corporis tempora dolore. Nesciunt sunt accusamus ratione, aut, quibusdam alias quae voluptatum dicta id unde sed odit sequi enim?",
-    catagory: 'todo'
-},
-{
-    title: "test2",
-    discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi sed corporis tempora dolore. Nesciunt sunt accusamus ratione, aut, quibusdam alias quae voluptatum dicta id unde sed odit sequi enim? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, dignissimos?",
-    catagory: 'in-progess'
-},
-{
-    title: "test3",
-    discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi sed corporis tempora dolore. Nesciunt sunt accusamus ratione, aut, quibusdam alias quae voluptatum dicta id unde sed odit sequi enim? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, dignissimos?",
-    catagory: 'done'
-},
-{
-    title: "test4",
-    discription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa commodi sed corporis tempora dolore. Nesciunt sunt accusamus ratione, aut, quibusdam alias quae voluptatum dicta id unde sed odit sequi enim? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, dignissimos?",
-    catagory: 'in-progess'
-}
-]
 
 const Home = () => {
-    const data = datas.map(data => data);
+    const [datas] = useDatas();
     const handleAdd = () => {
         let title = document.getElementById("title").value;
         let description = document.getElementById("description").value;
@@ -47,16 +27,16 @@ const Home = () => {
         }
 
         if (title !== "" && description !== "" && catagory !== "") {
-            // fetch('#', {
-            //     method: 'POST',
-            //     headers: {
-            //         'content-type': 'application/json'
-            //     },
-            //     body: JSON.stringify({ title, description, catagory })
-            // })
-            //     .then(res => res.json())
-            //     .then(result => {
-            //     })
+            fetch('https://todo-hi-server.up.railway.app/datas', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ title, description, catagory })
+            })
+                .then(res => res.json())
+                .then(result => {
+                })
             document.getElementById("title").value = "";
             document.getElementById("description").value = "";
             catagoryE.checked = false;
@@ -118,15 +98,15 @@ const Home = () => {
                     <Col sm={12} md={6} lg={4}>
                         <h3 style={{ color: "#808080", border: "1px solid #808080" }}>todo</h3>
                         {
-                            data.map(data => data.catagory === "todo" ? <div
-                                key={data.title}
+                            datas.map(data => data?.catagory === "todo" ? <div
+                                key={data._id}
                             >
                                 <Container className="pt-5">
                                     <h4 className="pb-2">{data.title}</h4>
-                                    <h5>{data.discription}</h5>
+                                    <h5>{data.description}</h5>
                                     <div>
-                                        <input type="button" value="in-progress" className="mx-4 my-3 bg-dark" />
-                                        <input type="button" value="done" className="mx-4 bg-dark" />
+                                        <input type="button" value="in-progress" className="mx-4 my-3 bg-secondary" />
+                                        <input type="button" value="done" className="mx-4 bg-secondary" />
                                     </div>
                                 </Container>
                             </div> : <></>)
@@ -135,14 +115,14 @@ const Home = () => {
                     <Col sm={12} md={6} lg={4}>
                         <h3 style={{ color: "#808080", border: "1px solid #808080" }}>in-progess</h3>
                         {
-                            data.map(data => data.catagory === "in-progess" ? <div
-                                key={data.title}
+                            datas.map(data => data?.catagory === "in-progress" ? <div
+                                key={data._id}
                             >
                                 <Container className="pt-5">
                                     <h4 className="pb-2">{data.title}</h4>
-                                    <h5>{data.discription}</h5>
+                                    <h5>{data.description}</h5>
                                     <div>
-                                        <input type="button" value="done" className="mx-4 bg-dark" />
+                                        <input type="button" value="done" className="mx-4 bg-secondary" />
                                     </div>
                                 </Container>
                             </div> : <></>)
@@ -151,12 +131,12 @@ const Home = () => {
                     <Col sm={12} md={6} lg={4}>
                         <h3 style={{ color: "#808080", border: "1px solid #808080" }}>done</h3>
                         {
-                            data.map(data => data.catagory === "done" ? <div
-                                key={data.title}
+                            datas.map(data => data.catagory === "done" ? <div
+                                key={data._id}
                             >
                                 <Container className="pt-5">
                                     <h4 className="pb-2">{data.title}</h4>
-                                    <h5>{data.discription}</h5>
+                                    <h5>{data.description}</h5>
                                 </Container>
                             </div> : <></>)
                         }
