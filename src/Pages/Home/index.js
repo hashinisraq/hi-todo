@@ -27,7 +27,7 @@ const Home = () => {
         }
 
         if (title !== "" && description !== "" && catagory !== "") {
-            fetch('https://todo-hi-server.up.railway.app/datas', {
+            fetch('https://hi-todo-notes-server.up.railway.app/datas', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
