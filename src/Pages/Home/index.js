@@ -104,10 +104,6 @@ const Home = () => {
                                 <Container className="pt-5">
                                     <h4 className="pb-2">{data.title}</h4>
                                     <h5>{data.description}</h5>
-                                    <div>
-                                        <input type="button" value="in-progress" className="mx-4 my-3 bg-secondary" />
-                                        <input type="button" value="done" className="mx-4 bg-secondary" />
-                                    </div>
                                 </Container>
                             </div> : <></>)
                         }
@@ -121,9 +117,6 @@ const Home = () => {
                                 <Container className="pt-5">
                                     <h4 className="pb-2">{data.title}</h4>
                                     <h5>{data.description}</h5>
-                                    <div>
-                                        <input type="button" value="done" className="mx-4 bg-secondary" />
-                                    </div>
                                 </Container>
                             </div> : <></>)
                         }
