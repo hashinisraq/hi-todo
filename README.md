@@ -2,9 +2,9 @@
 
 The site can be found at the following addresses 🌐:
 
-- Main: <https://hi-todo-notes.netlify.app/>
+- Main: <https://hi-todo-notes.netlify.app>
 
-- Server: <https://railway.app/>
+- Server: <https://www.cyclic.sh>
 
 ## Pre-requisites
 
