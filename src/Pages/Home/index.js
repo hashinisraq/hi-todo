@@ -27,7 +27,7 @@ const Home = () => {
         }
 
         if (title !== "" && description !== "" && catagory !== "") {
-            fetch('https://happy-lion-sari.cyclic.app/datas', {
+            fetch('https://todo-hi-server-opgv.onrender.com/datas', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

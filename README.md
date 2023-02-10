@@ -4,7 +4,7 @@ The site can be found at the following addresses 🌐:
 
 - Main: <https://hi-todo-notes.netlify.app>
 
-- Server: <https://www.cyclic.sh>
+- Server: <https://www.render.com>
 
 ## Pre-requisites
 
