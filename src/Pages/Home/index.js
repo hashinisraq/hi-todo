@@ -27,7 +27,7 @@ const Home = () => {
         }
 
         if (title !== "" && description !== "" && catagory !== "") {
-            fetch('https://todo-hi-server-opgv.onrender.com/datas', {
+            fetch('https://hi-todo-notes-server.vercel.app/datas', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
