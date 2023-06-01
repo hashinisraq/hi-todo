@@ -1,10 +1,10 @@
-# HI_Todo_Notes
+# Todo_Notes
 
 The site can be found at the following addresses 🌐:
 
 - Main: <https://hi-todo-notes.netlify.app>
 
-- Server: <https://www.vercel.com>
+- Server: <https://www.render.com>
 
 ## Pre-requisites
 
