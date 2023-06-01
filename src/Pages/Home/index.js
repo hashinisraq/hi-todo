@@ -48,23 +48,23 @@ const Home = () => {
 
     return (
         <div>
-            <Container className="container">
-                <Row className="pt-4">
+            <Container>
+                <Row className="pt-1">
                     <Col sm={12} md={12} lg={12}><h3>Take Notes...</h3></Col>
                 </Row>
                 <Row className="pt-1">
                     <Col sm={12} md={12} lg={12}>
-                        <div style={{ padding: "30px", backgroundColor: '#212529' }}>
+                        <Container style={{ backgroundColor: '#212529' }}>
                             <form className="row g-2" style={{ border: "1px solid #808080", padding: "30px" }}>
-                                <div className="col-12" style={{ backgroundColor: '#212529' }}>
+                                <Col sm={12} md={12} lg={12} style={{ backgroundColor: '#212529' }}>
                                     <label htmlFor="" className="form-label text-white">Title</label>
                                     <input placeholder="title...." type="text" className="form-control" id="title" required />
-                                </div>
-                                <div className="col-12" style={{ backgroundColor: '#212529' }}>
+                                </Col>
+                                <Col sm={12} md={12} lg={12} style={{ backgroundColor: '#212529' }}>
                                     <label htmlFor="" className="form-label text-white">Description </label>
                                     <textarea placeholder="description......" type="text" className="form-control" id="description" required />
-                                </div>
-                                <div className="col-12 p-0 m-0" style={{ backgroundColor: '#212529', width: "auto" }} >
+                                </Col>
+                                <Col sm={12} md={12} lg={12} className="p-0 m-0" style={{ backgroundColor: '#212529', width: "auto" }} >
                                     <div className="form-check" style={{ backgroundColor: '#212529' }}>
                                         <input className="form-check-input" type="radio" name="catagory" id="catagory1" value="todo" />
                                         <label className="form-check-label text-white" htmlFor="flexRadioDefault1">
@@ -83,15 +83,15 @@ const Home = () => {
                                             done
                                         </label>
                                     </div>
-                                </div>
-                                <div className="col-12" style={{ backgroundColor: '#212529' }}>
-                                    <input style={{ width: "100%", backgroundColor: "gray", color: "black", padding: "10px", marginTop: "2px", borderRadius: "5px", fontWeight: "bold" }} type="submit" value="Add" onClick={e => {
+                                </Col>
+                                <Col sm={12} md={12} lg={12} style={{ backgroundColor: '#212529' }}>
+                                    <input style={{ width: "50%", backgroundColor: "gray", color: "black", padding: "10px", marginTop: "2px", borderRadius: "5px", fontWeight: "bold" }} type="submit" value="Add" onClick={e => {
                                         e.preventDefault();
                                         handleAdd();
                                     }} />
-                                </div>
+                                </Col>
                             </form>
-                        </div>
+                        </Container>
                     </Col>
                 </Row>
                 <Row className="py-4">
@@ -136,7 +136,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <small><b>HASHIN ISRAQ © 2022 | ALL RIGHTS RESERVED</b></small>
+            <small><b>© HI TODO NOTES</b></small>
         </div>
     );
 };

@@ -2,7 +2,7 @@
 
 The site can be found at the following addresses 🌐:
 
-- Main: <https://hi-todo-notes.netlify.app>
+- Main: <https://hi-todonotes.netlify.app>
 
 - Server: <https://www.render.com>
 
@@ -17,7 +17,7 @@ The site can be found at the following addresses 🌐:
 You must first clone the repository. To do so, first open your console and type:
 
 ```bash
-git clone https://github.com/hashinisraq/hi-todo-notes.git
+git clone https://github.com/hashinisraq/hi-todo_notes-ui.git
 ```
 
 It is recommended to install the packages using yarn.
